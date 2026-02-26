@@ -2,12 +2,9 @@ import numpy as np
 
 def model_logistic_lambda(n, a, b, c, d):
     """
-    Model 1: Sigmoid/Logistic for Lambda vs N.
-    Used to extrapolate the asymptotic value of lambda as n -> infinity.
+    As specified: y(n) = d + (a - d) / (1 + (n/c)^b)
     """
     n = np.asarray(n, dtype=float)
-    # Avoid division by zero in parameter c
-    c = np.maximum(c, 1e-5)
     return d + (a - d) / (1.0 + (n / c) ** b)
 
 def model_power_constrained(x, a, b):

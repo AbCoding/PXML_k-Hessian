@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 from scipy.integrate import solve_bvp
 import warnings
 
@@ -60,7 +59,7 @@ def solve_k_hessian(n, k, grid_points=50, prev_sol=None):
                 x_grid,
                 y_guess,
                 p=[lam_guess],
-                tol=1e-6,  # Tighter tolerance to ensure grid error dominates
+                tol=1e-8,  # Tighter tolerance to ensure grid error dominates
                 max_nodes=10000
             )
             if res.success:

@@ -1,8 +1,13 @@
 import numpy as np
 from scipy.optimize import curve_fit
 from hessian_solver import solve_k_hessian
-from fitting_models import model_logistic_lambda
 import data_utils
+def model_logistic_lambda(n, a, b, c, d):
+    """
+    As specified: y(n) = d + (a - d) / (1 + (n/c)^b)
+    """
+    n = np.asarray(n, dtype=float)
+    return d + (a - d) / (1.0 + (n / c) ** b)
 
 
 def run_experiment(n_max=90, num_divisors=100, div_start=1.0, div_end=20.0):
@@ -39,8 +44,7 @@ def run_experiment(n_max=90, num_divisors=100, div_start=1.0, div_end=20.0):
 
             if k >= 0.99:
                 # Pass prev_sol to solver for continuation
-                lam, sol = solve_k_hessian(n, k, prev_sol)
-
+                lam, sol = solve_k_hessian(n, k, prev_sol=prev_sol)
                 if not np.isnan(lam):
                     n_data.append(n)
                     lam_data.append(lam)
@@ -65,8 +69,26 @@ def run_experiment(n_max=90, num_divisors=100, div_start=1.0, div_end=20.0):
             try:
                 # Initial guess: [a, b, c, d]
                 p0 = [lam_data[0], 2.0, np.mean(n_data), lam_data[-1]]
-                popt, _ = curve_fit(model_logistic_lambda, n_data, lam_data, p0=p0, maxfev=10000)
-                d_asymp = popt[3]
+                popt, _ = curve_fit(
+                    model_logistic_lambda,
+                    n_data,
+                    lam_data,
+                    p0=p0,
+                    bounds=(
+                        [-np.inf, 1e-8, -np.inf, -np.inf],  # lower bounds
+                        [np.inf, np.inf, np.inf, np.inf]  # upper bounds
+                    ),
+                    maxfev=10000
+                )
+
+                a, b, c, d = popt
+                d_asymp = d
+
+                # Print fitted logistic constants
+                print(
+                    f"{div:<10.2f} | "
+                    f"a={a:.6f}, b={b:.6f}, c={c:.6f}, d={d:.6f}"
+                )
 
                 if d_asymp > 0:
                     valid_divisors.append(div)
@@ -91,4 +113,4 @@ def run_experiment(n_max=90, num_divisors=100, div_start=1.0, div_end=20.0):
 
 
 if __name__ == "__main__":
-    run_experiment(n_max=90, num_divisors=500, div_start=1.0, div_end=50.0)
+    run_experiment(n_max=200, num_divisors=200, div_start=1.0, div_end=20.0)
