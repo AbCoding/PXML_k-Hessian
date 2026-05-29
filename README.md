@@ -1,8 +1,12 @@
 # $k$-Hessian Eigenvalue Problem — Numerical Study
 
-This repository contains the numerical component of an ongoing project studying
-the first eigenvalue of the $k$-Hessian operator on the unit ball in $\mathbb{R}^n$,
-and the rate at which it converges to a known theoretical limit as $n, k \to \infty$.
+This repository contains the code used to generate the numerical results in an
+upcoming paper on the first eigenvalue of the $k$-Hessian operator. The paper
+establishes sharp asymptotic bounds on $\lambda_{k,n}^{1/k}$ as $n, k \to \infty$
+with $n/k$ fixed; this codebase verifies those bounds numerically and illustrates
+the convergence of both the eigenvalue and the eigenfunction to their theoretical limits.
+
+> **Preprint:** *coming soon* <!-- replace with arXiv link once posted -->
 
 ---
 
