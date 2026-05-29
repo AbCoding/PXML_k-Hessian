@@ -96,7 +96,7 @@ Radial eigenfunctions $u_{k,n}$ for all computed $n$ (grey gradient, log-scaled 
 with $n = 1, 5, 20, 100$ highlighted and the limit $u_0$ overlaid (black dashed).
 
 ![Eigenfunctions](figures/eigenfunctions/eigenfunctions_alpha1.50.png)
-
+f
 Selected curves only:
 
 ![Eigenfunctions highlights](figures/eigenfunctions/eigenfunctions_highlights_alpha1.50.png)
