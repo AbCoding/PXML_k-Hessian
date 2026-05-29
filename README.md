@@ -81,32 +81,32 @@ function and the predicted limiting shape.
 $\lambda_{k,n}^{1/k}$ (black dots) against $n$, with $\ell_k$ (red dashed),
 $u_k$ (blue dash-dot), and $\lambda_\infty$ (grey dotted).
 
-![Eigenvalue bounds](figures/bounds/hessian_bounds_alpha1.50.png)
+![Eigenvalue bounds](https://raw.githubusercontent.com/AbCoding/PXML_k-Hessian/main/figures/bounds/hessian_bounds_alpha1.50.png)
 
 ### Bound Residuals
 
 Signed gaps $\lambda_{k,n}^{1/k} - \ell_k$ and $\lambda_{k,n}^{1/k} - u_k$,
 confirming $\lambda_{k,n}^{1/k}$ lies strictly between the two bounds for all computed $n$.
 
-![Residuals](figures/residuals/hessian_residuals_alpha1.50.png)
+![Residuals](https://raw.githubusercontent.com/AbCoding/PXML_k-Hessian/main/figures/residuals/hessian_residuals_alpha1.50.png)
 
 ### Eigenfunction Convergence to $u_0$
 
 Radial eigenfunctions $u_{k,n}$ for all computed $n$ (grey gradient, log-scaled in $n$),
 with $n = 1, 5, 20, 100$ highlighted and the limit $u_0$ overlaid (black dashed).
 
-![Eigenfunctions](figures/eigenfunctions/eigenfunctions_alpha1.50.png)
-f
+![Eigenfunctions](https://raw.githubusercontent.com/AbCoding/PXML_k-Hessian/main/figures/eigenfunctions/eigenfunctions_alpha1.50.png)
+
 Selected curves only:
 
-![Eigenfunctions highlights](figures/eigenfunctions/eigenfunctions_highlights_alpha1.50.png)
+![Eigenfunctions highlights](https://raw.githubusercontent.com/AbCoding/PXML_k-Hessian/main/figures/eigenfunctions/eigenfunctions_highlights_alpha1.50.png)
 
 ### $L^1$ Convergence Rate
 
 $\|u_{k,n} - u_0\|_{L^1[0,1]}$ against $n$ on a log-log scale with power-law fit.
 The slope is the convergence exponent.
 
-![L1 convergence](figures/convergence/convergence_alpha1.50.png)
+![L1 convergence](https://raw.githubusercontent.com/AbCoding/PXML_k-Hessian/main/figures/convergence/convergence_alpha1.50.png)
 
 ---
 
