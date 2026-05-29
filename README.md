@@ -49,7 +49,7 @@ grows super-exponentially and carries no finite limit.
 As $k \to \infty$ with $\alpha = n/k$ fixed, the renormalised eigenvalue converges
 to a closed-form limit:
 
-$$\lambda_\infty(\alpha) = \alpha^2 \left(\frac{2}{\alpha}\right)^{\!\!2/(2-\alpha)} \left(\frac{\alpha}{\alpha - 1}\right)^{\!\!\alpha - 1}.$$
+$$\lambda_\infty(\alpha) = \alpha^2 \left(\frac{2}{\alpha}\right)^{2/(2-\alpha)} \left(\frac{\alpha}{\alpha - 1}\right)^{\alpha - 1}.$$
 
 The special case $\alpha = 2$ (corresponding to $k = n/2$, the $p = 1$ Monge–Ampère
 regime) gives $\lambda_\infty(2) = 8e$.
@@ -69,7 +69,7 @@ function $u_0(r, \alpha)$ (described below) via the Rayleigh quotient.
 
 The eigenfunctions $u_{k,n}(r)$ converge in $L^1[0,1]$ to the function
 
-$$u_0(r, \alpha) = \begin{cases} -\exp\!\left(-\tfrac{\alpha}{2 r_\alpha^2} r^2\right) & r \le r_\alpha, \\[4pt] \dfrac{2}{\sigma} e^{-\alpha/2} \left(r^\sigma - 1\right) & r > r_\alpha, \end{cases}$$
+$$u_0(r, \alpha) = \begin{cases} -\exp\left(-\dfrac{\alpha}{2 r_\alpha^2} r^2\right) & r \le r_\alpha, \\ \dfrac{2}{\sigma} e^{-\alpha/2} \left(r^\sigma - 1\right) & r > r_\alpha. \end{cases}$$
 
 where $\sigma = 2 - \alpha$ and $r_\alpha = (\alpha/2)^{1/\sigma}$ is the junction
 point. This function is $C^1$ and is used both as the test function in the upper
